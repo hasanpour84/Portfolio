@@ -7,8 +7,11 @@ export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    const shouldUseDarkTheme = savedTheme === "dark";
+    let shouldUseDarkTheme = false;
+
+    try {
+      shouldUseDarkTheme = window.localStorage.getItem("theme") === "dark";
+    } catch {}
 
     document.body.classList.toggle("dark", shouldUseDarkTheme);
     const frame = window.requestAnimationFrame(() => setIsDark(shouldUseDarkTheme));
@@ -19,7 +22,9 @@ export function ThemeToggle() {
     const nextTheme = !isDark;
 
     document.body.classList.toggle("dark", nextTheme);
-    window.localStorage.setItem("theme", nextTheme ? "dark" : "light");
+    try {
+      window.localStorage.setItem("theme", nextTheme ? "dark" : "light");
+    } catch {}
     setIsDark(nextTheme);
   }
 

@@ -13,7 +13,7 @@ export function WorkArchive() {
 
   return <>
     <div className={styles.filters} role="group" aria-label="Filter case studies">
-      {filters.map((filter) => <button className={`${styles.filter}${activeFilter === filter ? ` ${styles.active}` : ""}`} key={filter} type="button" onClick={() => setActiveFilter(filter)}>{filter}</button>)}
+      {filters.map((filter) => <button className={`${styles.filter}${activeFilter === filter ? ` ${styles.active}` : ""}`} key={filter} type="button" aria-pressed={activeFilter === filter} onClick={() => setActiveFilter(filter)}>{filter}</button>)}
     </div>
     <ProjectGrid projects={visibleProjects} />
   </>;

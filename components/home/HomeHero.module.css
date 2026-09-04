@@ -36,11 +36,6 @@
   line-height:1.5;
 }
 
-.scroll {
-  font:11px var(--mono);
-  text-align:right;
-}
-
 @media (max-width:700px) {
   .hero {
     min-height:calc(100vh - 70px);
@@ -49,9 +44,5 @@
   .heroBottom {
     grid-template-columns:1fr;
     gap:24px;
-  }
-
-  .scroll {
-    display:none;
   }
 }
