@@ -202,25 +202,6 @@ h2 {
 .mesh-statement .eyebrow {
   align-self:start;
 }
-.contact-band {
-  margin:0 calc(clamp(22px,4vw,68px) * -1);
-  padding:clamp(50px,9vw,124px) clamp(22px,4vw,68px);
-  color:var(--secondary);
-  background:var(--primary);
-}
-.contact-band h2 {
-  max-width:850px;
-  font-size:clamp(42px,6vw,94px);
-}
-.contact-band a {
-  display:inline-block;
-  margin-top:28px;
-  color:var(--secondary);
-  border-bottom:1px solid var(--secondary);
-  font-size:14px;
-  font-weight:700;
-  text-decoration:none;
-}
 body.dark {
   --paper:#171112;
   --ink:#f5eee6;
@@ -228,9 +209,6 @@ body.dark {
   --line:rgb(245 238 230 / 20%);
   --card:#2b2021;
   --primary:#e3404b;
-}
-body.dark .contact-band {
-  background:#080707;
 }
 body.dark .mesh-statement {
   color:#f7eee7;
@@ -257,10 +235,6 @@ body.dark .mesh-statement {
   }
   .project-card:nth-child(2) {
     margin-top:0;
-  }
-  .contact-band {
-    margin:0 -22px;
-    padding:60px 22px;
   }
 }
 @media (max-width:700px) {
@@ -1308,9 +1282,6 @@ body.dark .mesh-statement {
   --line:rgb(24 17 18 / 17%);
   --card:#e8dcd6;
   --primary:#c7242f;
-}
-body.dark .contact-band {
-  background:var(--ink);
 }
 .rayvarz-challenges, .rayvarz-strategy, .strategy-viewport, .systems-library {
   background:#fff;
