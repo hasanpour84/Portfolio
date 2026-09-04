@@ -193,3 +193,181 @@
 .rayvarzStrategy,.strategyViewport {
   background:#fff;
 }
+.metricsFeature {
+  width:100vw;
+  margin:0 calc(50% - 50vw) clamp(65px,9vw,110px);
+  padding:clamp(55px,8vw,110px) clamp(22px,4vw,68px);
+}
+.metricsFeatureHeader {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  padding-bottom:34px;
+  border-bottom:1px solid currentColor;
+}
+.metricsFeature h2 {
+  font-size:clamp(42px,6vw,96px);
+}
+.metricsFeatureHeader p {
+  max-width:430px;
+  margin:0;
+}
+.metricsFeature {
+  background:var(--ink);
+  color:var(--secondary);
+}
+.metricsFeatureHeader {
+  border-bottom:0;
+}
+.metricsGroups {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(38px,6vw,94px);
+}
+.metricsGroup h3 {
+  margin:0 0 18px;
+  color:#45b653;
+  font:11px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.metricsToggle {
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-width:158px;
+  padding:3px;
+  border:1px solid rgb(244 244 242 / .35);
+  border-radius:999px;
+  overflow:hidden;
+}
+.metricsToggleIndicator {
+  position:absolute;
+  inset:3px auto 3px 3px;
+  width:calc(50% - 3px);
+  border-radius:999px;
+  background:#45b653;
+  transform:translateX(100%);
+  transition:transform .38s cubic-bezier(.2,.8,.2,1);
+}
+.metricsFeatureBefore .metricsToggleIndicator {
+  transform:translateX(0);
+  background:#f28c28;
+}
+.metricsToggle button {
+  position:relative;
+  z-index:1;
+  border:0;
+  padding:9px 15px;
+  background:transparent;
+  color:rgb(244 244 242 / .65);
+  cursor:pointer;
+  font:11px var(--mono);
+  text-transform:uppercase;
+  transition:color .25s ease;
+}
+.metricsToggle button[aria-pressed="true"] {
+  color:#111;
+}
+.metricsLines {
+  border-top:1px solid rgb(244 244 242 / .3);
+}
+.metricLine {
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr) 32px;
+  gap:14px;
+  align-items:center;
+  padding:17px 0;
+  border-bottom:1px solid rgb(244 244 242 / .2);
+  font-size:14px;
+}
+.metricLineNumber {
+  color:rgb(244 244 242 / .42);
+  font:10px var(--mono);
+}
+.metricLineContent {
+  min-width:0;
+}
+.metricLineContent > span {
+  display:block;
+}
+.metricLineBar {
+  height:3px;
+  margin-top:9px;
+  overflow:hidden;
+  background:rgb(244 244 242 / .16);
+}
+.metricLineBar i {
+  display:block;
+  width:calc(var(--metric-value) * 5%);
+  max-width:100%;
+  height:100%;
+  background:#45b653;
+  transform-origin:left center;
+  animation:metric-bar-in .55s cubic-bezier(.2,.8,.2,1) both;
+}
+.metricsFeatureBefore .metricLineBar i,.metricsFeatureBefore .metricLine strong {
+  background:#f28c28;
+  color:#f28c28;
+}
+.metricLine strong {
+  color:#45b653;
+  text-align:right;
+  font:14px var(--mono);
+  animation:metric-value-in .32s ease both;
+}
+@keyframes metric-bar-in {
+  from {
+    transform:scaleX(0);
+  }
+  to {
+    transform:scaleX(1);
+  }
+}
+@keyframes metric-value-in {
+  from {
+    opacity:0;
+    transform:translateY(4px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .metricsToggleIndicator,.metricsToggle button {
+    transition:none;
+  }
+  .metricLineBar i,.metricLine strong {
+    animation:none;
+  }
+}
+@media (max-width:700px) {
+  .metricsFeatureHeader {
+    display:block;
+  }
+  .metricsFeatureHeader p {
+    margin-top:18px;
+  }
+  .metricsToggle {
+    margin-top:22px;
+  }
+  .metricsGroups {
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+  .metricLine {
+    grid-template-columns:26px minmax(0,1fr) 32px;
+    gap:14px;
+  }
+}
+.metricsFeatureBefore .metricLine strong {
+  background:transparent;
+}
+.metricLineBar i {
+  transition:width .65s cubic-bezier(.2,.8,.2,1),background-color .35s ease;
+}
+.metricsLines,.metricLine {
+  border:0;
+}

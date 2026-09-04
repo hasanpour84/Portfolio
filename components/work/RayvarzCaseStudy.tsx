@@ -152,19 +152,19 @@ export function RayvarzCaseStudy() {
 
     <section className="systems-library" aria-labelledby="library-title"><header className="systems-library__header"><h2 id="library-title">System<br />Library</h2><p>Ten connected systems, each with its own purpose and context—brought together through a shared experience and design language.</p></header><div className="systems-library__grid">{systems.map(([name, transliteration, image]) => <article className="system-tile" key={name}><figure className="system-tile__image"><Image src={image} alt={`${name} system interface`} fill sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 20vw" /></figure><div className="system-tile__content"><SystemIcon name={name} /><div><h3>{name}</h3><p>{transliteration}</p></div></div></article>)}</div></section>
 
-    <section className={`metrics-feature metrics-feature--${metricView}`} aria-labelledby="metrics-title">
-      <header className="metrics-feature__header">
+    <section className={`${styles.metricsFeature}${metricView === "before" ? ` ${styles.metricsFeatureBefore}` : ""}`} aria-labelledby="metrics-title">
+      <header className={styles.metricsFeatureHeader}>
         <div><h2 id="metrics-title">Metrics</h2><p>Fourteen measures that capture the user experience and the impact of a stronger product design system.</p></div>
-        <div className="metrics-toggle" role="group" aria-label="Select metric comparison">
-          <span className="metrics-toggle__indicator" aria-hidden="true" />
+        <div className={styles.metricsToggle} role="group" aria-label="Select metric comparison">
+          <span className={styles.metricsToggleIndicator} aria-hidden="true" />
           <button type="button" onClick={() => setMetricView("before")} aria-pressed={metricView === "before"}>Before</button>
           <button type="button" onClick={() => setMetricView("after")} aria-pressed={metricView === "after"}>After</button>
         </div>
       </header>
-      <div className="metrics-groups">
-        {metricGroups.map(({ title, metrics }) => <section className="metrics-group" key={title} aria-labelledby={`${title.toLowerCase().replace(/ /g, "-")}-metrics`}>
+      <div className={styles.metricsGroups}>
+        {metricGroups.map(({ title, metrics }) => <section className={styles.metricsGroup} key={title} aria-labelledby={`${title.toLowerCase().replace(/ /g, "-")}-metrics`}>
           <h3 id={`${title.toLowerCase().replace(/ /g, "-")}-metrics`}>{title}</h3>
-          <div className="metrics-lines">{metrics.map(([metric, before, after], index) => <div className="metric-line" key={metric}><span className="metric-line__number">{String(index + 1).padStart(2, "0")}</span><div className="metric-line__content"><span>{metric}</span><div className="metric-line__bar" aria-hidden="true"><i style={{ "--metric-value": `${metricView === "before" ? before : after}` } as React.CSSProperties} /></div></div><strong aria-label={`${metric}: ${metricView} value ${metricView === "before" ? before : after}`}>{metricView === "before" ? before : after}</strong></div>)}</div>
+          <div className={styles.metricsLines}>{metrics.map(([metric, before, after], index) => <div className={styles.metricLine} key={metric}><span className={styles.metricLineNumber}>{String(index + 1).padStart(2, "0")}</span><div className={styles.metricLineContent}><span>{metric}</span><div className={styles.metricLineBar} aria-hidden="true"><i style={{ "--metric-value": `${metricView === "before" ? before : after}` } as React.CSSProperties} /></div></div><strong aria-label={`${metric}: ${metricView} value ${metricView === "before" ? before : after}`}>{metricView === "before" ? before : after}</strong></div>)}</div>
         </section>)}
       </div>
     </section>
