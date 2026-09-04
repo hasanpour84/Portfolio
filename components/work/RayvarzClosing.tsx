@@ -1,11 +1,12 @@
 import Image from "next/image";
+import styles from "./RayvarzClosing.module.css";
 
 const cover = "/images/rayvarz/rayvarz-cover-homepage.jpg";
 
 export function RayvarzClosing() {
   return (
     <>
-      <section className="design-leadership" aria-labelledby="leadership-title">
+      <section className={styles.designLeadership} aria-labelledby="leadership-title">
         <span className="eyebrow">Design leadership</span>
         <h2 id="leadership-title">A Shared Direction for Complex Work.</h2>
         <p>

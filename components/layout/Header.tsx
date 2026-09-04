@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { site } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
+import styles from "./Header.module.css";
 
 export function Header() {
   return (
-    <header className="site-header">
+    <header className={styles.siteHeader}>
       <Link className="brand" href="/" aria-label={`${site.name} home`}>
         {site.initials}
         <span>®</span>

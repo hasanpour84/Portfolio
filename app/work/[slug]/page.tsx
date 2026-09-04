@@ -5,6 +5,7 @@ import { RayvarzCaseStudy } from "@/components/work/RayvarzCaseStudy";
 import { RayvarzClosing } from "@/components/work/RayvarzClosing";
 import { CaseStudyClosing } from "@/components/work/CaseStudyClosing";
 import type { Metadata } from "next";
+import styles from "./page.module.css";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -35,9 +36,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const isRayvarz = caseStudy.slug === "rayvarz";
 
   return (
-    <main className={`page${isRayvarz ? " page--rayvarz" : ""}`}>
+    <main className={`page${isRayvarz ? ` ${styles.rayvarzPage}` : ""}`}>
       <article className="case-study">
-        <header className="case-hero">
+        <header className={`case-hero${isRayvarz ? ` ${styles.rayvarzCaseHero}` : ""}`}>
           {!isRayvarz && (
             <div className="case-meta">
               <span>{caseStudy.category}</span>
@@ -49,19 +50,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {!isRayvarz && <p className="hero-copy">{caseStudy.overview}</p>}
         </header>
 
-        <figure className="case-cover">
+        <figure className={`case-cover${isRayvarz ? ` ${styles.rayvarzCaseCover}` : ""}`}>
           <Image src={caseStudy.cover} alt={caseStudy.alt} fill priority sizes="100vw" />
         </figure>
 
         {isRayvarz && (
-          <section className="case-study-title-card" aria-labelledby="case-study-title-card-title">
-            <p className="case-study-title-card__eyebrow">Rayvarz / Product design</p>
+          <section className={styles.caseStudyTitleCard} aria-labelledby="case-study-title-card-title">
+            <p className={styles.caseStudyTitleCardEyebrow}>Rayvarz / Product design</p>
             <h1 id="case-study-title-card-title">{caseStudy.title}</h1>
-            <p className="case-study-title-card__subtitle">Senior Product Designer</p>
+            <p className={styles.caseStudyTitleCardSubtitle}>Senior Product Designer</p>
           </section>
         )}
 
-        <div className="case-intro">
+        <div className={`case-intro${isRayvarz ? ` ${styles.rayvarzCaseIntro}` : ""}`}>
           {!isRayvarz && (
             <dl className="case-facts">
               <div>

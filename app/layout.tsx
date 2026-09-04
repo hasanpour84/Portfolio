@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -27,7 +28,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`try {
+  if (window.localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+} catch {}`}
+        </Script>
         <div className="grain" aria-hidden="true" />
         <Header />
         {children}

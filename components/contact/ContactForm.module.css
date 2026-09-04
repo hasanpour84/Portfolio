@@ -1,0 +1,40 @@
+form.form {
+  display:grid;
+  gap:18px;
+}
+.form label {
+  font:11px var(--mono);
+  text-transform:uppercase;
+}
+.form input,.form textarea {
+  width:100%;
+  padding:10px 0;
+  border:0;
+  border-bottom:1px solid var(--ink);
+  border-radius:0;
+  outline:0;
+  color:var(--ink);
+  background:transparent;
+  font:16px var(--sans);
+}
+.form input:focus,.form textarea:focus {
+  border-color:var(--primary);
+}
+.form textarea {
+  min-height:110px;
+  resize:vertical;
+}
+.submit {
+  justify-self:start;
+  padding:13px 21px;
+  border:0;
+  color:var(--secondary);
+  background:var(--primary);
+  cursor:pointer;
+  font:700 12px var(--sans);
+}
+.formMessage {
+  margin:0;
+  color:var(--primary);
+  font-size:12px;
+}

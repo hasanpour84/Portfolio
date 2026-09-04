@@ -1,0 +1,31 @@
+.contactBand {
+  margin:0 calc(clamp(22px,4vw,68px) * -1);
+  padding:clamp(50px,9vw,124px) clamp(22px,4vw,68px);
+  color:var(--secondary);
+  background:var(--primary);
+}
+.contactBand h2 {
+  max-width:850px;
+  font-size:clamp(42px,6vw,94px);
+}
+.contactBand a {
+  display:inline-block;
+  margin-top:28px;
+  color:var(--secondary);
+  border-bottom:1px solid var(--secondary);
+  font-size:14px;
+  font-weight:700;
+  text-decoration:none;
+}
+:global(body.dark) .contactBand {
+  background:#080707;
+}
+@media (max-width:700px) {
+  .contactBand {
+    margin:0 -22px;
+    padding:60px 22px;
+  }
+}
+:global(body.dark) .contactBand {
+  background:var(--ink);
+}
