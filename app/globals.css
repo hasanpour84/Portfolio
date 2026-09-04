@@ -314,7 +314,7 @@ body.dark .mesh-statement {
 .case-facts dd {
   margin:4px 0 0;
 }
-.rayvarz-role,.systems-library {
+.systems-library {
   width:100vw;
   margin:0 calc(50% - 50vw) clamp(65px,9vw,110px);
   padding:clamp(55px,8vw,110px) clamp(22px,4vw,68px);
@@ -350,7 +350,7 @@ body.dark .mesh-statement {
   inset:0;
   background:linear-gradient(180deg,transparent 25%,rgb(9 7 7 / .9));
 }
-.system-card img,.system-tile img,.rayvarz-role__visual img {
+.system-card img,.system-tile img {
   object-fit:cover;
 }
 .system-card__content {
@@ -362,78 +362,10 @@ body.dark .mesh-statement {
   color:rgb(244 244 242 / .74);
   font-size:12px;
 }
-.rayvarz-role {
-  display:grid;
-  grid-template-columns:.83fr 1.17fr;
-  padding:0;
-  color:var(--secondary);
-  background:#1d9b73;
-}
-.rayvarz-role__visual {
-  position:relative;
-  min-height:670px;
-  overflow:hidden;
-}
-.rayvarz-role__visual::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgb(25 5 5 / .35);
-}
-.rayvarz-role__visual span {
-  position:absolute;
-  z-index:1;
-  left:24px;
-  bottom:20px;
-  font:10px var(--mono);
-}
-.rayvarz-role__content {
-  display:flex;
-  flex-direction:column;
-  padding:clamp(38px,6vw,90px);
-  background:linear-gradient(135deg,#169b6c 0%,#297fa2 45%,#6151ca 100%);
-}
-.rayvarz-role__content > span {
-  color:#111;
-  font:700 clamp(14px,1.3vw,18px) var(--mono);
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
 .system-card__tag {
   color:var(--accent,#f3c849);
   font:11px var(--mono);
   text-transform:uppercase;
-}
-.rayvarz-role__content h2 {
-  margin:20px 0 auto;
-  font-size:clamp(42px,5.5vw,86px);
-  line-height:.93;
-  letter-spacing:-.07em;
-}
-.role-list {
-  margin:56px 0 0;
-  padding:0;
-  list-style:none;
-  border-top:1px solid rgb(244 244 242 / .36);
-}
-.role-list li {
-  display:grid;
-  grid-template-columns:30px 1fr;
-  gap:15px;
-  align-items:center;
-  padding:17px 0;
-  border-bottom:1px solid rgb(244 244 242 / .36);
-  font-size:clamp(16px,1.5vw,21px);
-}
-.role-icon {
-  width:22px;
-  height:22px;
-  color:#111;
-  stroke:currentColor;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  fill:none;
 }
 .systems-feature {
   margin-bottom:clamp(65px,9vw,110px);
@@ -497,7 +429,7 @@ body.dark .mesh-statement {
   font-size:11px;
 }
 @media (max-width:700px) {
-  .case-intro,.case-narrative section,.rayvarz-role,.systems-feature__heading {
+  .case-intro,.case-narrative section,.systems-feature__heading {
     grid-template-columns:1fr;
   }
   .case-cover {
@@ -508,15 +440,6 @@ body.dark .mesh-statement {
   }
   .systems-library__header p {
     margin-top:18px;
-  }
-  .rayvarz-role__visual {
-    min-height:400px;
-  }
-  .rayvarz-role__content h2 {
-    margin-bottom:40px;
-  }
-  .role-list {
-    margin-top:0;
   }
   .systems-cards {
     grid-template-columns:1fr;

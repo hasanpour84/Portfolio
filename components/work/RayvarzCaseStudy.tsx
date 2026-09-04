@@ -95,7 +95,7 @@ function RoleIcon({ type }: { type: (typeof roles)[number][0] }) {
     research: <><circle cx="10" cy="10" r="5" /><path d="m14 14 5 5M8 10h4M10 8v4" /></>,
   };
 
-  return <svg className="role-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">{paths[type]}</svg>;
+  return <svg className={styles.roleIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">{paths[type]}</svg>;
 }
 
 function SystemIcon({ name }: { name: (typeof systems)[number][0] }) {
@@ -123,12 +123,12 @@ export function RayvarzCaseStudy() {
   return <>
     <section className={styles.rayvarzChallenges} aria-labelledby="challenges-title"><div className={styles.rayvarzChallengesHeader}><h2 id="challenges-title">Challenges</h2><p>Six connected problems shaped the experience. Each required its own answer, while still feeling like one clear and confident Rayvarz journey.</p></div><div className={styles.challengeCards}>{challenges.map(([title, description], index) => <article className={styles.challengeCard} key={title}><Image src={challengeImages[index]} alt="" fill sizes="(max-width: 700px) 50vw, 33vw" /><span className={styles.challengeCardNumber}>{String(index + 1).padStart(2, "0")}</span><div className={styles.challengeCardContent}><h3>{title}</h3><p>{description}</p></div></article>)}</div></section>
 
-    <section className="rayvarz-role" aria-labelledby="role-title">
-      <div className="rayvarz-role__visual"><Image src={cover} alt="Rayvarz product design work" fill sizes="50vw" /><span>Rayvarz / Product design</span></div>
-      <div className="rayvarz-role__content">
+    <section className={styles.rayvarzRole} aria-labelledby="role-title">
+      <div className={styles.rayvarzRoleVisual}><Image src={cover} alt="Rayvarz product design work" fill sizes="50vw" /><span>Rayvarz / Product design</span></div>
+      <div className={styles.rayvarzRoleContent}>
         <span>My role</span>
         <h2 id="role-title">Leading the Experience From Strategy to System.</h2>
-        <ul className="role-list">
+        <ul className={styles.roleList}>
           {roles.map(([icon, role]) => <li key={role}><RoleIcon type={icon} /><div>{role}</div></li>)}
         </ul>
       </div>

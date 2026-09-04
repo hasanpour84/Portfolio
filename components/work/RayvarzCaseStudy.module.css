@@ -504,3 +504,91 @@
 .rayvarzChallenges {
   background:#fff;
 }
+.rayvarzRole {
+  width:100vw;
+  margin:0 calc(50% - 50vw) clamp(65px,9vw,110px);
+  padding:clamp(55px,8vw,110px) clamp(22px,4vw,68px);
+  display:grid;
+  grid-template-columns:.83fr 1.17fr;
+  padding:0;
+  color:var(--secondary);
+  background:#1d9b73;
+}
+.rayvarzRoleVisual {
+  position:relative;
+  min-height:670px;
+  overflow:hidden;
+}
+.rayvarzRoleVisual::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgb(25 5 5 / .35);
+}
+.rayvarzRoleVisual img {
+  object-fit:cover;
+}
+.rayvarzRoleVisual span {
+  position:absolute;
+  z-index:1;
+  left:24px;
+  bottom:20px;
+  font:10px var(--mono);
+}
+.rayvarzRoleContent {
+  display:flex;
+  flex-direction:column;
+  padding:clamp(38px,6vw,90px);
+  background:linear-gradient(135deg,#169b6c 0%,#297fa2 45%,#6151ca 100%);
+}
+.rayvarzRoleContent > span {
+  color:#111;
+  font:700 clamp(14px,1.3vw,18px) var(--mono);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.rayvarzRoleContent h2 {
+  margin:20px 0 auto;
+  font-size:clamp(42px,5.5vw,86px);
+  line-height:.93;
+  letter-spacing:-.07em;
+}
+.roleList {
+  margin:56px 0 0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid rgb(244 244 242 / .36);
+}
+.roleList li {
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:15px;
+  align-items:center;
+  padding:17px 0;
+  border-bottom:1px solid rgb(244 244 242 / .36);
+  font-size:clamp(16px,1.5vw,21px);
+}
+.roleIcon {
+  width:22px;
+  height:22px;
+  color:#111;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
+}
+@media (max-width:700px) {
+  .rayvarzRole {
+    grid-template-columns:1fr;
+  }
+  .rayvarzRoleVisual {
+    min-height:400px;
+  }
+  .rayvarzRoleContent h2 {
+    margin-bottom:40px;
+  }
+  .roleList {
+    margin-top:0;
+  }
+}
