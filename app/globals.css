@@ -120,20 +120,7 @@ nav a:hover,.footer-links a:hover {
   text-decoration:underline;
   text-underline-offset:5px;
 }
-.theme-toggle {
-  display:grid;
-  width:33px;
-  height:33px;
-  place-items:center;
-  padding:0;
-  color:var(--ink);
-  cursor:pointer;
-  background:transparent;
-  border:1px solid var(--line);
-  border-radius:50%;
-  font-size:16px;
-}
-.theme-toggle:focus-visible,a:focus-visible {
+a:focus-visible {
   outline:2px solid var(--primary);
   outline-offset:4px;
 }
