@@ -425,26 +425,6 @@ body.dark .mesh-statement {
   margin:0;
   font-size:17px;
 }
-.work-hero {
-  padding:clamp(55px,10vw,150px) 0 clamp(55px,9vw,110px);
-}
-.work-hero h1 {
-  max-width:980px;
-  margin:22px 0;
-  font-size:clamp(50px,8vw,130px);
-  font-weight:600;
-  line-height:.95;
-  letter-spacing:-.075em;
-}
-.work-hero h1 em {
-  font-family:var(--serif);
-  font-weight:500;
-}
-.work-hero p {
-  max-width:530px;
-  margin:0;
-  font-size:17px;
-}
 .filters {
   display:flex;
   flex-wrap:wrap;
