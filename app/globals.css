@@ -277,20 +277,6 @@ body.dark .mesh-statement {
   margin:0;
   font-size:17px;
 }
-.design-leadership {
-  max-width:850px;
-  margin:0 auto clamp(65px,9vw,110px);
-}
-.design-leadership h2 {
-  max-width:620px;
-  margin:18px 0;
-  font-size:clamp(36px,5vw,72px);
-}
-.design-leadership p {
-  max-width:570px;
-  margin:0;
-  font-size:18px;
-}
 .full-visual {
   position:relative;
   height:min(60vw,760px);

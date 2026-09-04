@@ -1,0 +1,14 @@
+.designLeadership {
+  max-width:850px;
+  margin:0 auto clamp(65px,9vw,110px);
+}
+.designLeadership h2 {
+  max-width:620px;
+  margin:18px 0;
+  font-size:clamp(36px,5vw,72px);
+}
+.designLeadership p {
+  max-width:570px;
+  margin:0;
+  font-size:18px;
+}
