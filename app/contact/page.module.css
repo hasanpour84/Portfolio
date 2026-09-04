@@ -1,0 +1,42 @@
+.contactHero {
+  padding:clamp(55px,10vw,150px) 0 clamp(55px,9vw,110px);
+}
+.contactHero h1 {
+  max-width:980px;
+  margin:22px 0;
+  font-size:clamp(50px,8vw,130px);
+  font-weight:600;
+  line-height:.95;
+  letter-spacing:-.075em;
+}
+.contactHero h1 em {
+  font-family:var(--serif);
+  font-weight:500;
+}
+.contactHero p {
+  max-width:530px;
+  margin:0;
+  font-size:17px;
+}
+.contactLayout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  padding:55px 0 100px;
+  border-top:1px solid var(--line);
+}
+.contactLayout h2 {
+  font-size:32px;
+}
+.contactDetails a {
+  display:block;
+  margin:8px 0;
+  font-size:20px;
+  text-underline-offset:4px;
+}
+@media (max-width:700px) {
+  .contactLayout {
+    grid-template-columns:1fr;
+    gap:42px;
+  }
+}
