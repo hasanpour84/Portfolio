@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import styles from "./RayvarzCaseStudy.module.css";
 
 const cover = "/images/rayvarz/rayvarz-cover-homepage.jpg";
 
@@ -133,17 +134,17 @@ export function RayvarzCaseStudy() {
       </div>
     </section>
 
-    <section className="rayvarz-strategy" aria-labelledby="strategy-title">
-      <header className="rayvarz-strategy__header"><h2 id="strategy-title">UX Strategy</h2><p>Five principles gave the work a shared direction—from the first visit through to the more detailed product journeys.</p></header>
-      <div className="strategy-viewport">
-        <article className="strategy-item" key={strategy}>
-          <figure className="strategy-item__image"><Image src={strategyImages[strategy]} alt={`Rayvarz strategy visual: ${activeStrategy[1]}`} fill sizes="(max-width: 700px) 100vw, 52vw" /></figure>
-          <div className="strategy-item__content"><span className="strategy-item__number">{String(strategy + 1).padStart(2, "0")} / {activeStrategy[0]}</span><h3>{activeStrategy[1]}</h3><p className="strategy-item__description">{activeStrategy[2]}</p><aside className="strategy-item__example"><span>In practice</span><p>{activeStrategy[3]}</p></aside></div>
+    <section className={styles.rayvarzStrategy} aria-labelledby="strategy-title">
+      <header className={styles.rayvarzStrategyHeader}><h2 id="strategy-title">UX Strategy</h2><p>Five principles gave the work a shared direction—from the first visit through to the more detailed product journeys.</p></header>
+      <div className={styles.strategyViewport}>
+        <article className={styles.strategyItem} key={strategy}>
+          <figure className={styles.strategyItemImage}><Image src={strategyImages[strategy]} alt={`Rayvarz strategy visual: ${activeStrategy[1]}`} fill sizes="(max-width: 700px) 100vw, 52vw" /></figure>
+          <div className={styles.strategyItemContent}><span className={styles.strategyItemNumber}>{String(strategy + 1).padStart(2, "0")} / {activeStrategy[0]}</span><h3>{activeStrategy[1]}</h3><p className={styles.strategyItemDescription}>{activeStrategy[2]}</p><aside className={styles.strategyItemExample}><span>In practice</span><p>{activeStrategy[3]}</p></aside></div>
         </article>
       </div>
-      <div className="strategy-controls">
-        <div className="strategy-tabs" role="tablist" aria-label="UX strategy principles">{strategies.map((item, index) => <button key={item[1]} type="button" role="tab" aria-selected={strategy === index} onClick={() => setStrategy(index)}><span>{String(index + 1).padStart(2, "0")}</span>{item[1]}</button>)}</div>
-        <div className="strategy-buttons"><button className="strategy-button" type="button" onClick={() => setStrategy(strategy - 1)} disabled={strategy === 0} aria-label="Previous UX strategy">‹</button><button className="strategy-button" type="button" onClick={() => setStrategy(strategy + 1)} disabled={strategy === strategies.length - 1} aria-label="Next UX strategy">›</button></div>
+      <div className={styles.strategyControls}>
+        <div className={styles.strategyTabs} role="tablist" aria-label="UX strategy principles">{strategies.map((item, index) => <button key={item[1]} type="button" role="tab" aria-selected={strategy === index} onClick={() => setStrategy(index)}><span>{String(index + 1).padStart(2, "0")}</span>{item[1]}</button>)}</div>
+        <div className={styles.strategyButtons}><button className={styles.strategyButton} type="button" onClick={() => setStrategy(strategy - 1)} disabled={strategy === 0} aria-label="Previous UX strategy">‹</button><button className={styles.strategyButton} type="button" onClick={() => setStrategy(strategy + 1)} disabled={strategy === strategies.length - 1} aria-label="Next UX strategy">›</button></div>
       </div>
     </section>
 
