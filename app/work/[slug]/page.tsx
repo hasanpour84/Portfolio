@@ -1,6 +1,7 @@
 import { caseStudies } from "@/content/caseStudies";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { RayvarzCaseStudy } from "@/components/work/RayvarzCaseStudy";
 import { RayvarzClosing } from "@/components/work/RayvarzClosing";
 import { CaseStudyClosing } from "@/components/work/CaseStudyClosing";
@@ -17,6 +18,16 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const { slug } = await params;
   const caseStudy = caseStudies.find((item) => item.slug === slug);
   if (!caseStudy) return { title: "Case study not found" };
+  if (caseStudy.comingSoon) {
+    const title = `${caseStudy.title} — Coming Soon`;
+    const description = `${caseStudy.title} case study is coming soon.`;
+    return {
+      title,
+      description,
+      alternates: { canonical: `/work/${slug}` },
+      openGraph: { title, description },
+    };
+  }
   return {
     title: `${caseStudy.title} case study`,
     description: caseStudy.overview,
@@ -32,6 +43,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   );
 
   if (!caseStudy) notFound();
+
+  if (caseStudy.comingSoon) {
+    return (
+      <main className="page">
+        <section className={styles.comingSoon} aria-labelledby="coming-soon-title">
+          <div className={styles.comingSoonHeader}>
+            <p>{caseStudy.title} / Case study</p>
+            <span className={styles.comingSoonStatus}>In preparation</span>
+          </div>
+          <div className={styles.comingSoonBody}>
+            <div>
+              <h1 id="coming-soon-title" className={styles.comingSoonTitle}>Coming <em>Soon...</em></h1>
+              <p className={styles.comingSoonCopy}>The story behind the blocks.<br />A closer look is on its way.</p>
+              <Link className="text-link" href="/">Back to home <span aria-hidden="true">↗</span></Link>
+            </div>
+          </div>
+          <div className={styles.comingSoonFooter}><span>Product design</span><span>Ideas → Systems → Experiences</span></div>
+        </section>
+      </main>
+    );
+  }
 
   const isRayvarz = caseStudy.slug === "rayvarz";
 

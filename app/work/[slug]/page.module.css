@@ -1,3 +1,62 @@
+.comingSoon {
+  padding-block:clamp(28px,4vw,56px);
+}
+.comingSoonHeader,
+.comingSoonFooter {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font:11px var(--mono);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.comingSoonHeader p { margin:0; }
+.comingSoonStatus {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.comingSoonStatus::before {
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--primary);
+}
+.comingSoonBody {
+  padding-block:clamp(56px,8vw,112px);
+}
+.comingSoonTitle {
+  margin:0;
+  font-size:clamp(72px,13vw,192px);
+  font-weight:600;
+  line-height:.98;
+  letter-spacing:-.065em;
+}
+.comingSoonTitle em {
+  display:block;
+  color:var(--primary);
+  font-family:var(--serif);
+  font-weight:500;
+}
+.comingSoonCopy {
+  margin:28px 0;
+  color:var(--muted);
+  font-size:clamp(15px,1.35vw,18px);
+  line-height:1.7;
+}
+.comingSoonFooter {
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+}
+@media (max-width:700px) {
+  .comingSoonHeader { align-items:flex-start; flex-direction:column; gap:12px; }
+  .comingSoonBody { padding-block:48px; }
+  .comingSoonTitle { font-size:clamp(72px,20vw,140px); }
+  .comingSoonFooter { flex-wrap:wrap; gap:12px; font-size:10px; }
+}
 .rayvarzPage {
   overflow-x:clip;
   background:#fff;
