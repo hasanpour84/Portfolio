@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cover, roles } from "./RayvarzCaseStudy.data";
+import { roleCover, roles } from "./RayvarzCaseStudy.data";
 import styles from "./RayvarzCaseStudy.module.css";
 
 function RoleIcon({ type }: { type: (typeof roles)[number][0] }) {
@@ -8,5 +8,5 @@ function RoleIcon({ type }: { type: (typeof roles)[number][0] }) {
 }
 
 export function RayvarzRole() {
-  return <section className={styles.rayvarzRole} aria-labelledby="role-title"><div className={styles.rayvarzRoleVisual}><Image src={cover} alt="Rayvarz product design work" fill sizes="50vw" /><span>Rayvarz / Product design</span></div><div className={styles.rayvarzRoleContent}><span>My role</span><h2 id="role-title">Leading the Experience From Strategy to System.</h2><ul className={styles.roleList}>{roles.map(([icon, role]) => <li key={role}><RoleIcon type={icon} /><div>{role}</div></li>)}</ul></div></section>;
+  return <section className={styles.rayvarzRole} aria-labelledby="role-title"><div className={styles.rayvarzRoleVisual}><Image src={roleCover} alt="Rayvarz product design work" fill sizes="50vw" /><span>Rayvarz / Product design</span></div><div className={styles.rayvarzRoleContent}><span>My role</span><h2 id="role-title">Leading the Experience From Strategy to System.</h2><ul className={styles.roleList}>{roles.map(([icon, role]) => <li key={role}><RoleIcon type={icon} /><div>{role}</div></li>)}</ul></div></section>;
 }

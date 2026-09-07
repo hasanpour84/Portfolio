@@ -1,4 +1,5 @@
 export const cover = "/images/rayvarz/rayvarz-cover-homepage.jpg";
+export const roleCover = "/images/rayvarz/rayvarz_role.jpg";
 
 export const challenges = [
   { title: "Designed by Non-Designers", description: "Interfaces were often created without shared design principles.", image: "/images/rayvarz/Rayvarz_Challenge_non designer.png" },
@@ -24,7 +25,7 @@ export const systemFeatures = [
   { tag: "Transformation", title: "10+ Individual\nSystems, Unified", text: "Transformed more than ten independent systems into a connected experience—aligning journeys, patterns, and quality without flattening the needs of each product.", image: "/images/rayvarz/rayvarz_twolayercard_10systems.jpg" },
 ] as const;
 
-export const systems = [["Accounting", "Hesabdari", "/images/rayvarz/rayvarz_systemcard_hesabdari.jpg"], ["Credit", "Etebarat", "/images/rayvarz/rayvarz_systemcard_etebarat.jpg"], ["Sale", "Foroush", "/images/rayvarz/rayvarz_systemcard_foroush.jpg"], ["Inventory", "Anbar", "/images/rayvarz/rayvarz_systemcard_anbar.jpg"], ["Cash", "Vojooh Naghd", "/images/rayvarz/rayvarz_systemcard_vojouh.jpg"], ["Asset", "Darayee Sabet", "/images/rayvarz/rayvarz_systemcard_darayeesabet.jpg"], ["Payroll", "Hoghoogh", "/images/rayvarz/rayvarz_systemcard_hoghoogh.jpg"], ["Human Resource", "Kargozini", "/images/rayvarz/rayvarz_systemcard_kargozini.jpg"], ["Report Generator", "Gozareshat", cover], ["Shareholder", "Saham", "/images/rayvarz/rayvarz_systemcard_saham.jpg"]] as const;
+export const systems = [["Accounting", "Hesabdari", "/images/rayvarz/rayvarz_systemcard_hesabdari.jpg"], ["Credit", "Etebarat", "/images/rayvarz/rayvarz_systemcard_etebarat.jpg"], ["Sale", "Foroush", "/images/rayvarz/rayvarz_systemcard_foroush.jpg"], ["Inventory", "Anbar", "/images/rayvarz/rayvarz_systemcard_anbar.jpg"], ["Cash", "Vojooh Naghd", "/images/rayvarz/rayvarz_systemcard_vojouh.jpg"], ["Asset", "Darayee Sabet", "/images/rayvarz/rayvarz_systemcard_darayeesabet.jpg"], ["Payroll", "Hoghoogh", "/images/rayvarz/rayvarz_systemcard_hoghoogh.jpg"], ["Human Resource", "Kargozini", "/images/rayvarz/rayvarz_systemcard_kargozini.jpg"], ["Report Generator", "Gozareshat", "/images/rayvarz/rayvarz_systemcard_report.jpg"], ["Shareholder", "Saham", "/images/rayvarz/rayvarz_systemcard_saham.jpg"]] as const;
 
 export const metricGroups = [
   { title: "User Experience", metrics: [["Average Clicks to Complete Complex Tasks", 12, 4], ["Visible Actions per Screen", 7, 2], ["Time to Learn Key Workflows During Onboarding", 20, 3], ["Maximum Navigation Depth", 6, 3], ["Form Complexity", 17, 1], ["Information Visibility", 3, 16], ["Task Completion Rate", 4, 15], ["User Error Rate", 14, 4]] },
