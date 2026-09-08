@@ -1,0 +1,223 @@
+.systemToProduct {
+  width:100vw;
+  margin:clamp(96px,15vw,220px) calc(50% - 50vw) 0;
+  padding:clamp(88px,12vw,180px) clamp(22px,4vw,68px);
+  overflow:hidden;
+  color:#f8f7f4;
+  background:radial-gradient(ellipse 66% 90% at 12% 18%,rgb(69 182 83 / .2),transparent 67%),radial-gradient(ellipse 62% 86% at 87% 22%,rgb(98 81 202 / .3),transparent 70%),radial-gradient(ellipse 58% 78% at 54% 94%,rgb(59 105 89 / .23),transparent 70%),#211f28;
+}
+
+.content {
+  width:min(100%,1400px);
+  margin:0 auto;
+}
+
+.intro {
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(260px,.65fr);
+  gap:24px clamp(40px,8vw,140px);
+  align-items:end;
+}
+
+.eyebrow {
+  grid-column:1 / -1;
+  margin:0;
+  color:#a4e1ae;
+  font:11px var(--mono);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.intro h2 {
+  max-width:11ch;
+  margin:0;
+  font-size:clamp(44px,6vw,88px);
+  line-height:.93;
+  letter-spacing:-.075em;
+}
+
+.intro > p:last-child {
+  max-width:39ch;
+  margin:0;
+  color:rgb(248 247 244 / .72);
+  font-size:clamp(16px,1.45vw,20px);
+  line-height:1.5;
+}
+
+.context {
+  margin-top:clamp(52px,8vw,104px);
+  color:rgb(248 247 244 / .62);
+  font:11px var(--mono);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.context span {
+  color:#a4e1ae;
+}
+
+.controls {
+  display:flex;
+  justify-content:flex-end;
+  margin:18px 0;
+}
+
+.revealButton {
+  min-height:42px;
+  padding:10px 14px;
+  border:1px solid rgb(248 247 244 / .35);
+  border-radius:0;
+  color:#f8f7f4;
+  background:transparent;
+  cursor:pointer;
+  font:11px var(--mono);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  transition:border-color .2s ease,background-color .2s ease;
+}
+
+.revealButton:hover,.revealButton[aria-pressed="true"] {
+  border-color:#a4e1ae;
+  background:rgb(164 225 174 / .12);
+}
+
+.revealButton:focus-visible,.marker:focus-visible {
+  outline:2px solid #a4e1ae;
+  outline-offset:4px;
+}
+
+.productFrame {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgb(248 247 244 / .2);
+  box-shadow:0 24px 60px rgb(10 8 15 / .32),0 3px 10px rgb(10 8 15 / .18);
+}
+
+.productScreenshot {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.annotations {
+  position:absolute;
+  inset:0;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .24s ease;
+}
+
+.annotations[data-visible="true"] {
+  opacity:1;
+  pointer-events:auto;
+}
+
+.marker {
+  position:absolute;
+  width:22px;
+  height:22px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:#f8f7f4;
+  cursor:pointer;
+  transform:translate(-50%,-50%);
+}
+
+.markerDot {
+  position:absolute;
+  inset:5px;
+  border:1px solid #f8f7f4;
+  border-radius:50%;
+  background:#45b653;
+  box-shadow:0 0 0 4px rgb(69 182 83 / .22);
+}
+
+.markerDetail {
+  position:absolute;
+  top:50%;
+  left:calc(100% + 8px);
+  display:grid;
+  width:min(200px,22vw);
+  gap:5px;
+  padding:10px 12px;
+  border:1px solid rgb(248 247 244 / .28);
+  color:#f8f7f4;
+  background:rgb(33 31 40 / .93);
+  text-align:left;
+  transform:translateY(-50%);
+}
+
+.markerDetail strong {
+  color:#a4e1ae;
+  font:10px var(--mono);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.markerDetail span {
+  font-size:11px;
+  line-height:1.4;
+}
+
+.mobileDetail {
+  display:none;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .revealButton,.annotations {
+    transition:none;
+  }
+}
+
+@media (max-width:700px) {
+  .systemToProduct {
+    margin-top:96px;
+    padding-block:88px;
+  }
+
+  .intro {
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .intro h2 {
+    max-width:10ch;
+  }
+
+  .context {
+    margin-top:48px;
+    line-height:1.7;
+  }
+
+  .controls {
+    justify-content:flex-start;
+    margin:20px 0;
+  }
+
+  .markerDetail {
+    display:none;
+  }
+
+  .mobileDetail {
+    display:block;
+    margin-top:14px;
+    padding:14px;
+    border:1px solid rgb(248 247 244 / .26);
+    color:#f8f7f4;
+  }
+
+  .mobileDetail strong {
+    color:#a4e1ae;
+    font:10px var(--mono);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+  }
+
+  .mobileDetail p {
+    margin:6px 0 0;
+    font-size:13px;
+    line-height:1.45;
+  }
+}

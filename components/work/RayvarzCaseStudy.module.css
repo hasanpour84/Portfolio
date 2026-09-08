@@ -639,6 +639,27 @@
   color:rgb(244 244 242 / .74);
   font-size:12px;
 }
+.systemCardLink {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  width:fit-content;
+  margin-top:24px;
+  padding-bottom:4px;
+  border-bottom:1px solid currentColor;
+  color:var(--secondary);
+  font:11px var(--mono);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  transition:color .2s ease,border-color .2s ease;
+}
+.systemCardLink:hover {
+  color:#9b7cff;
+}
+.systemCardLink:focus-visible {
+  outline:2px solid #9b7cff;
+  outline-offset:4px;
+}
 .systemCardTag {
   color:var(--accent,#f3c849);
   font:11px var(--mono);
@@ -712,6 +733,9 @@
   }
   .systemCard {
     min-height:500px;
+  }
+  .systemCardLink {
+    margin-top:20px;
   }
   .systemsLibraryGrid {
     grid-template-columns:repeat(2,1fr);
