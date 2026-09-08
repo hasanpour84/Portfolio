@@ -1,0 +1,251 @@
+.colorSystem {
+  padding-top:clamp(96px,15vw,180px);
+}
+
+.intro {
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(260px,.65fr);
+  gap:24px clamp(40px,8vw,140px);
+  align-items:end;
+}
+
+.eyebrow {
+  grid-column:1 / -1;
+  margin:0;
+  color:#45b653;
+  font:11px var(--mono);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.intro h2 {
+  max-width:11ch;
+  margin:0;
+  font-size:clamp(40px,5.6vw,82px);
+  line-height:.94;
+  letter-spacing:-.07em;
+}
+
+.intro > p:last-child {
+  max-width:39ch;
+  margin:0;
+  color:var(--muted);
+  font-size:clamp(16px,1.45vw,20px);
+  line-height:1.5;
+}
+
+.tokenArchitecture {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(70px,.16fr) minmax(0,1fr);
+  gap:clamp(20px,3vw,48px);
+  align-items:stretch;
+  margin-top:clamp(56px,8vw,104px);
+}
+
+.tokenGroup {
+  display:grid;
+  grid-template-rows:auto minmax(0,1fr);
+  min-width:0;
+}
+
+.groupHeader {
+  min-height:80px;
+  margin-bottom:20px;
+}
+
+.groupHeader h3 {
+  margin:0 0 6px;
+  font-size:clamp(26px,2.8vw,42px);
+  line-height:.95;
+  letter-spacing:-.065em;
+}
+
+.groupHeader p {
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.atomicGrid,.semanticGrid {
+  display:grid;
+  gap:1px;
+  background:var(--line);
+}
+
+.atomicGrid {
+  grid-template-columns:repeat(5,minmax(0,1fr));
+}
+
+.atomicToken {
+  min-width:0;
+  padding:10px;
+  background:#fff;
+}
+
+.atomicSwatch {
+  display:block;
+  aspect-ratio:1;
+  margin-bottom:9px;
+  background:var(--swatch);
+}
+
+.atomicToken > span:not(.atomicSwatch),.atomicToken strong {
+  display:block;
+  overflow:hidden;
+  font:9px var(--mono);
+  letter-spacing:.02em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.atomicToken > span:not(.atomicSwatch) {
+  color:var(--muted);
+}
+
+.atomicToken strong {
+  color:var(--ink);
+  font-weight:500;
+}
+
+.transition {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:var(--muted);
+  text-align:center;
+}
+
+.transition span {
+  color:#45b653;
+  font-size:clamp(28px,3vw,42px);
+  line-height:1;
+}
+
+.transition p {
+  width:8ch;
+  margin:0;
+  font:9px/1.4 var(--mono);
+  text-transform:uppercase;
+}
+
+.semanticGrid {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:1fr;
+}
+
+.semanticToken {
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:12px;
+  align-items:center;
+  min-height:82px;
+  padding:13px;
+  background:#fff;
+}
+
+.semanticSwatch {
+  width:36px;
+  height:36px;
+  border:1px solid rgb(24 17 18 / .12);
+  background:var(--swatch);
+}
+
+.semanticToken h4 {
+  margin:0 0 4px;
+  font-size:12px;
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+
+.semanticToken p {
+  margin:0;
+  color:var(--muted);
+  font:10px var(--mono);
+}
+
+.closing {
+  max-width:28ch;
+  margin:clamp(64px,10vw,120px) 0 0;
+  font-size:clamp(28px,3.5vw,50px);
+  line-height:1.05;
+  letter-spacing:-.06em;
+}
+
+.closing strong {
+  color:#45b653;
+  font-weight:600;
+}
+
+@media (max-width:900px) {
+  .tokenArchitecture {
+    grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);
+    gap:20px;
+  }
+
+  .atomicGrid {
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .semanticGrid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:700px) {
+  .colorSystem {
+    padding-top:96px;
+  }
+
+  .intro {
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .intro h2 {
+    max-width:10ch;
+  }
+
+  .tokenArchitecture {
+    grid-template-columns:1fr;
+    gap:36px;
+    margin-top:48px;
+  }
+
+  .atomicGrid {
+    grid-template-columns:repeat(5,minmax(0,1fr));
+  }
+
+  .transition {
+    flex-direction:row;
+    justify-content:flex-start;
+  }
+
+  .transition span {
+    transform:rotate(90deg);
+  }
+
+  .transition p {
+    width:auto;
+  }
+
+  .semanticGrid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .semanticToken {
+    grid-template-columns:28px 1fr;
+    min-height:74px;
+    padding:11px;
+  }
+
+  .semanticSwatch {
+    width:28px;
+    height:28px;
+  }
+
+  .closing {
+    margin-top:64px;
+  }
+}
