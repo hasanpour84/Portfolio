@@ -1,0 +1,38 @@
+.page {
+  overflow-x:clip;
+}
+
+.caseStudy {
+  padding-block:clamp(96px,15vw,220px);
+}
+
+.hero {
+  max-width:1050px;
+}
+
+.eyebrow {
+  margin:0 0 clamp(20px,3vw,34px);
+  color:#45b653;
+  font:11px var(--mono);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.hero h1 {
+  max-width:13ch;
+  margin:0;
+  font-size:clamp(52px,8.6vw,132px);
+  line-height:.9;
+  letter-spacing:-.075em;
+}
+
+@media (max-width:700px) {
+  .caseStudy {
+    padding-block:72px 120px;
+  }
+
+  .hero h1 {
+    max-width:11ch;
+    font-size:clamp(46px,13vw,72px);
+  }
+}
