@@ -6,3 +6,11 @@ out/
 /dist/
 .vinext/
 .wrangler/
+# Local design source files
+*.psd
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Local prototypes
+floating-hero.html
