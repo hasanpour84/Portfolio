@@ -1,0 +1,153 @@
+.section {
+  padding-top:clamp(28px,4vw,56px);
+}
+
+.landscape {
+  position:relative;
+  margin-top:0;
+  padding-top:35px;
+}
+
+.landscapeLabel {
+  position:absolute;
+  top:12px;
+  right:0;
+  margin:0;
+  color:var(--muted);
+  font:10px var(--mono);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.systems {
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  grid-template-rows:repeat(4,minmax(128px,1fr));
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.system {
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  min-height:0;
+  padding:clamp(18px,2.1vw,32px);
+  border-radius:14px;
+  border:0;
+  background:#fff;
+}
+
+.system {
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  align-items:flex-start;
+  color:#fff;
+  background:#1e3021;
+  padding:9px;
+  transition:box-shadow .2s ease;
+}
+
+.image {
+  z-index:-2;
+  object-fit:cover;
+  transition:transform .2s ease;
+}
+
+.system:hover {
+  box-shadow:inset 0 0 0 1px rgb(69 182 83 / .65);
+}
+
+.system:hover .image {
+  transform:scale(1.025);
+}
+
+.system h3 {
+  margin:0;
+  font-size:clamp(14px,1vw,16px);
+  font-weight:600;
+  line-height:.96;
+  letter-spacing:-.06em;
+}
+
+.system h3 {
+  padding:8px 11px;
+  border-radius:999px;
+  color:#171917;
+  background:#fff;
+}
+
+.finance { grid-column:1 / span 5; grid-row:1 / span 2; }
+.payroll { grid-column:6 / span 4; grid-row:1; }
+.humanResources { grid-column:10 / span 3; grid-row:1; }
+.warehouse { grid-column:6 / span 4; grid-row:2 / span 2; }
+.sales { grid-column:10 / span 3; grid-row:2; }
+.treasury { grid-column:1 / span 3; grid-row:3; }
+.assets { grid-column:4 / span 2; grid-row:3; }
+.shareholders { grid-column:10 / span 3; grid-row:3; }
+.reporting { grid-column:1 / span 3; grid-row:4; }
+.access { grid-column:4 / span 2; grid-row:4; }
+
+.reporting,.access,.humanResources,.sales {
+  align-items:flex-start;
+}
+
+@media (max-width:900px) {
+  .systems {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:none;
+  }
+
+  .finance,.payroll,.humanResources,.warehouse,.sales,.treasury,.assets,.shareholders,.reporting,.access {
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .finance,.warehouse {
+    min-height:250px;
+  }
+
+}
+
+@media (max-width:700px) {
+  .section {
+    padding-top:36px;
+  }
+
+  .landscape {
+    margin-top:52px;
+    padding-top:29px;
+  }
+
+  .landscapeLabel {
+    top:10px;
+    font-size:9px;
+  }
+
+  .systems {
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .system,.finance,.warehouse {
+    min-height:0;
+  }
+
+  .system {
+    padding:9px;
+  }
+
+  .system h3 {
+    font-size:16px;
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .system,.image {
+    transition:none;
+  }
+}

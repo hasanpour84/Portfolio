@@ -1,0 +1,23 @@
+.wrapper { --supporting-copy-line-height: 1.5; }
+
+.copy {
+  overflow:hidden;
+}
+
+.collapsed {
+  max-height:calc(2em * var(--supporting-copy-line-height));
+  max-height:2lh;
+}
+
+.button {
+  margin-top:8px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  font:600 13px/1.45 inherit;
+}
+
+.button:hover { color:#45b653; }
+.button:focus-visible { outline:2px solid #45b653; outline-offset:3px; }
