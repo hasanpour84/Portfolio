@@ -6,47 +6,58 @@ import styles from "./RayseenSystemToProduct.module.css";
 
 const annotations = [
   {
-    id: "layout",
-    label: "Layout",
+    id: "expansion-panel",
+    label: "Expansion Panel",
     description:
-      "One of the core page structures used throughout the ecosystem.",
-    x: "14%",
-    y: "28%",
+      "Progressive disclosure keeps related information available without overwhelming the page.",
+    x: "97%",
+    y: "17.5%",
+    side: "left",
   },
   {
-    id: "navigation",
-    label: "Navigation",
-    description: "Shared navigation patterns keep product movement familiar.",
-    x: "31%",
-    y: "14%",
+    id: "crud-buttons",
+    label: "CRUD Buttons",
+    description:
+      "Consistent actions make creating, editing, duplicating, and deleting feel predictable.",
+    x: "92.5%",
+    y: "33%",
+    side: "left",
   },
   {
-    id: "filtering-pattern",
-    label: "Filtering pattern",
-    description: "Shared filtering behavior used across RAYSEEN products.",
-    x: "70%",
-    y: "25%",
+    id: "lookup",
+    label: "Lookup",
+    description:
+      "Reusable lookup controls connect users to the right records quickly.",
+    x: "5.5%",
+    y: "25.5%",
+    side: "right",
   },
   {
-    id: "table",
-    label: "Table",
-    description: "A consistent way to scan, compare, and act on dense data.",
-    x: "52%",
-    y: "58%",
+    id: "master-detail-layout",
+    label: "MasterDetail Layout",
+    description:
+      "A connected master and detail view supports focused work without losing context.",
+    x: "28.5%",
+    y: "84%",
+    side: "right",
   },
   {
-    id: "components",
-    label: "Components",
-    description: "Reusable building blocks create continuity across screens.",
-    x: "19%",
-    y: "76%",
+    id: "global-header",
+    label: "Global Header",
+    description:
+      "A shared header keeps navigation, utilities, and system context consistent.",
+    x: "40%",
+    y: "8%",
+    side: "right",
   },
   {
-    id: "actions-toolbar",
-    label: "Actions / Toolbar",
-    description: "Predictable actions support efficient, repeatable workflows.",
-    x: "78%",
-    y: "13%",
+    id: "data-card",
+    label: "Data Card",
+    description:
+      "A concise summary surfaces important totals and status at the point of decision.",
+    x: "42%",
+    y: "93%",
+    side: "right",
   },
 ] as const;
 
@@ -86,21 +97,27 @@ export function RayseenSystemToProduct() {
           <button
             aria-pressed={layersVisible}
             className={styles.revealButton}
+            data-visible={layersVisible}
             onClick={toggleLayers}
             type="button"
           >
-            {layersVisible ? "Hide system layers" : "Reveal system layers"}
+            <span className={styles.revealButtonLabel}>System layers</span>
+            <span className={styles.revealSwitch} aria-hidden="true">
+              <span className={styles.revealSwitchThumb} />
+            </span>
+            <span className={styles.revealButtonState}>
+              {layersVisible ? "On" : "Off"}
+            </span>
           </button>
         </div>
 
         <div className={styles.productFrame}>
           <Image
-            alt="Temporary placeholder for the RAYSEEN product screenshot."
+            alt="RAYSEEN product interface showing the design system in use."
             className={styles.productScreenshot}
-            height={1000}
-            src="/images/rayvarz/rayseen/system-to-product-placeholder.svg"
-            unoptimized
-            width={1600}
+            height={1500}
+            src="/images/rayvarz/rayseen/System2Product.jpg"
+            width={2400}
           />
 
           <div
@@ -121,6 +138,7 @@ export function RayseenSystemToProduct() {
                   onClick={() => setActiveAnnotation(annotation.id)}
                   onFocus={() => setActiveAnnotation(annotation.id)}
                   onMouseEnter={() => setActiveAnnotation(annotation.id)}
+                  data-side={annotation.side}
                   style={{ left: annotation.x, top: annotation.y }}
                   tabIndex={layersVisible ? 0 : -1}
                   type="button"

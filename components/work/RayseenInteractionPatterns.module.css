@@ -88,6 +88,7 @@
   cursor:pointer;
   font:inherit;
   text-align:left;
+  transition:background-color .2s ease,color .2s ease;
 }
 
 .productIcon {
@@ -115,6 +116,7 @@
   width:18px;
   height:18px;
   justify-self:end;
+  transition:transform .2s ease;
 }
 
 .indicator::before,.indicator::after {
@@ -136,6 +138,20 @@
 .panel[data-open="true"] .indicator::after {
   opacity:0;
   transform:translate(-50%,-50%) rotate(90deg) scaleX(.4);
+}
+
+@media (hover:hover) {
+  .panel:not([data-open="true"]) .panelButton:hover {
+    background:#f7f7f5;
+  }
+
+  .panelButton:hover .productTitle {
+    color:#45b653;
+  }
+
+  .panelButton:hover .indicator {
+    transform:rotate(90deg);
+  }
 }
 
 .panelButton:focus-visible {
@@ -169,7 +185,7 @@
 }
 
 @media (prefers-reduced-motion:reduce) {
-  .panel,.indicator::before,.indicator::after,.panelContent {
+  .panel,.panelButton,.indicator,.indicator::before,.indicator::after,.panelContent {
     transition:none;
   }
 }

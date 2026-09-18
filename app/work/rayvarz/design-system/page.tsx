@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { RayseenInteractionPatterns } from "@/components/work/RayseenInteractionPatterns";
 import { RayseenImpact } from "@/components/work/RayseenImpact";
@@ -11,26 +12,41 @@ import styles from "./page.module.css";
 
 const problems = [
   {
+    icon: "fragmentation",
     title: "Fragmentation",
     description:
       "Products had evolved independently, each developing its own structures, conventions, and interaction language.",
   },
   {
+    icon: "inconsistency",
     title: "Inconsistency",
     description:
       "Similar actions behaved differently across products, making the experience harder to learn and predict.",
   },
   {
+    icon: "repetition",
     title: "Repetition",
     description:
       "Teams repeatedly solved the same design problems, creating duplicate solutions instead of reusable patterns.",
   },
   {
+    icon: "scaling",
     title: "Scaling Complexity",
     description:
       "As the ecosystem grew, maintaining consistency across products became increasingly difficult.",
   },
 ] as const;
+
+function ProblemIcon({ type }: { type: (typeof problems)[number]["icon"] }) {
+  const paths = {
+    fragmentation: <><path d="M4 4h6v6H4zM14 14h6v6h-6z" /><path d="M14 4h6v6h-6zM4 14h6v6H4z" opacity=".38" /></>,
+    inconsistency: <><path d="M4 7h11M15 4l3 3-3 3M20 17H9M9 14l-3 3 3 3" /></>,
+    repetition: <><rect x="8" y="4" width="12" height="12" rx="1" /><path d="M16 16v4H4V8h4" /></>,
+    scaling: <><circle cx="12" cy="12" r="2" /><path d="M10 10 5 5M14 10l5-5M10 14l-5 5M14 14l5 5" /></>,
+  } as const;
+
+  return <svg aria-hidden="true" className={styles.problemIcon} fill="none" focusable="false" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24">{paths[type]}</svg>;
+}
 
 export const metadata: Metadata = {
   title: "RAYSEEN Design System",
@@ -48,13 +64,14 @@ export default function RayseenDesignSystemPage() {
   return (
     <main className={`page ${styles.page}`}>
       <article className={styles.caseStudy}>
-        <Link className={styles.backLink} href="/work/rayvarz">
-          <span aria-hidden="true">←</span> Back to Rayvarz Case Study
-        </Link>
-
         <header className={styles.hero}>
-          <p className={styles.eyebrow}>RAYSEEN Design System</p>
-          <h1>A shared product language for a complex ERP ecosystem.</h1>
+          <div className={styles.heroEyebrow}>
+            <Link className={styles.backLink} href="/work/rayvarz" aria-label="Back to Rayvarz Case Study">
+              <span aria-hidden="true" />
+            </Link>
+            <p className={styles.eyebrow}>RAYSEEN Design System</p>
+          </div>
+          <h1>RAYSEEN: A shared product language for a <em>complex</em> ERP ecosystem.</h1>
           <p className={styles.metadata}>
             11 Products <span aria-hidden="true">·</span> 500+ Features{" "}
             <span aria-hidden="true">·</span> Light &amp; Dark{" "}
@@ -62,8 +79,16 @@ export default function RayseenDesignSystemPage() {
           </p>
         </header>
 
-        <div className={styles.heroVisual} aria-label="Future RAYSEEN design system visual" role="img">
-          <span>Hero visual in progress</span>
+        <div className={styles.heroVisual}>
+          <Image
+            src="/images/rayvarz/rayseen/Rayseen%20Hero%201.jpg"
+            alt="RAYSEEN design system interface"
+            width={1727}
+            height={911}
+            preload
+            sizes="100vw"
+            unoptimized
+          />
         </div>
 
         <section className={styles.whySystem} aria-labelledby="why-system-title">
@@ -81,9 +106,9 @@ export default function RayseenDesignSystemPage() {
           </header>
 
           <div className={styles.problemGrid}>
-            {problems.map(({ title, description }, index) => (
+            {problems.map(({ icon, title, description }) => (
               <article className={styles.problemCard} key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <ProblemIcon type={icon} />
                 <h3>{title}</h3>
                 <p>{description}</p>
               </article>

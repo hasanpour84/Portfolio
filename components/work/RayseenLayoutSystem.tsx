@@ -5,42 +5,42 @@ const layouts = [
   {
     title: "Table",
     description: "For dense data views, lists, filtering, and repeated actions.",
-    icon: "/images/rayvarz/rayseen/layout-table-icon-placeholder.svg",
-    alt: "Temporary placeholder for the Table layout icon.",
+    icon: "/images/rayvarz/rayseen/Layout_Table.png",
+    alt: "Table layout example.",
   },
   {
     title: "Single Entity",
     description:
       "For focused views centered around one record or business object.",
-    icon: "/images/rayvarz/rayseen/layout-single-entity-icon-placeholder.svg",
-    alt: "Temporary placeholder for the Single Entity layout icon.",
+    icon: "/images/rayvarz/rayseen/Layout_SingleEntity.png",
+    alt: "Single Entity layout example.",
   },
   {
     title: "MasterDetail",
     description: "For navigating related entities without losing context.",
-    icon: "/images/rayvarz/rayseen/layout-master-detail-icon-placeholder.svg",
-    alt: "Temporary placeholder for the MasterDetail layout icon.",
+    icon: "/images/rayvarz/rayseen/Layout_MasterDetail.png",
+    alt: "MasterDetail layout example.",
   },
   {
     title: "Modal",
     description:
       "For contained tasks that should not interrupt the main workflow.",
-    icon: "/images/rayvarz/rayseen/layout-modal-icon-placeholder.svg",
-    alt: "Temporary placeholder for the Modal layout icon.",
+    icon: "/images/rayvarz/rayseen/Layout_Modal.png",
+    alt: "Modal layout example.",
   },
   {
     title: "Operation",
     description:
       "For guided, action-oriented processes and transactional flows.",
-    icon: "/images/rayvarz/rayseen/layout-operation-icon-placeholder.svg",
-    alt: "Temporary placeholder for the Operation layout icon.",
+    icon: "/images/rayvarz/rayseen/Layout_Operation.png",
+    alt: "Operation layout example.",
   },
   {
     title: "SimpleForm",
     description:
       "For lightweight data entry with minimal structural complexity.",
-    icon: "/images/rayvarz/rayseen/layout-simple-form-icon-placeholder.svg",
-    alt: "Temporary placeholder for the SimpleForm layout icon.",
+    icon: "/images/rayvarz/rayseen/Layout_SimpleForm.png",
+    alt: "SimpleForm layout example.",
   },
 ] as const;
 
@@ -71,10 +71,10 @@ export function RayseenLayoutSystem() {
             <Image
               alt={alt}
               className={styles.layoutIcon}
-              height={48}
+              height={317}
               src={icon}
               unoptimized
-              width={48}
+              width={422}
             />
             <h3>{title}</h3>
             <p>{description}</p>

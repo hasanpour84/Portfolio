@@ -130,6 +130,7 @@
   align-self:stretch;
   overflow:hidden;
   border:1px solid var(--line);
+  border-radius:20px;
   background:#fafafa;
 }
 
@@ -187,5 +188,6 @@
 
   .visual {
     min-height:64vw;
+    border-radius:14px;
   }
 }

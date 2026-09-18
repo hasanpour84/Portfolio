@@ -44,17 +44,23 @@
 .outcomes {
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
   margin-top:clamp(72px,10vw,140px);
-  border-block:1px solid var(--line);
 }
 
 .outcome {
   min-width:0;
   padding:clamp(24px,3vw,42px);
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fafafa;
 }
 
-.outcome + .outcome {
-  border-left:1px solid var(--line);
+.outcomeIcon {
+  width:24px;
+  height:24px;
+  margin-bottom:clamp(32px,4vw,56px);
+  color:#45b653;
 }
 
 .outcome h3 {
@@ -63,6 +69,7 @@
   font-size:clamp(21px,2vw,30px);
   line-height:.98;
   letter-spacing:-.055em;
+  white-space:pre-line;
 }
 
 .outcome p {
@@ -92,27 +99,38 @@
   font-weight:600;
 }
 
-.backNavigation {
-  padding-top:20px;
-  border-top:1px solid var(--line);
-}
-
-.backNavigation a {
+.caseStudyLink {
   display:inline-flex;
-  gap:8px;
   align-items:center;
-  color:var(--muted);
+  gap:10px;
+  min-height:44px;
+  padding:10px 16px;
+  border:1px solid rgb(25 25 25 / .18);
+  border-radius:8px;
+  color:var(--ink);
   font:11px var(--mono);
   letter-spacing:.04em;
+  text-decoration:none;
   text-transform:uppercase;
-  transition:color .2s ease;
+  transition:border-color .2s ease,color .2s ease,background-color .2s ease;
 }
 
-.backNavigation a:hover {
-  color:#45b653;
+.caseStudyLinkIcon {
+  width:7px;
+  height:7px;
+  margin-left:3px;
+  border:solid currentColor;
+  border-width:0 2px 2px 0;
+  transform:rotate(135deg);
 }
 
-.backNavigation a:focus-visible {
+.caseStudyLink:hover {
+  border-color:#45b653;
+  color:#fff;
+  background:#45b653;
+}
+
+.caseStudyLink:focus-visible {
   outline:2px solid #45b653;
   outline-offset:4px;
 }
@@ -122,14 +140,6 @@
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
-  .outcome:nth-child(3) {
-    border-left:0;
-    border-top:1px solid var(--line);
-  }
-
-  .outcome:nth-child(4) {
-    border-top:1px solid var(--line);
-  }
 }
 
 @media (max-width:700px) {
@@ -148,16 +158,13 @@
 
   .outcomes {
     grid-template-columns:1fr;
+    gap:9px;
     margin-top:64px;
   }
 
   .outcome {
-    padding:26px 0;
-  }
-
-  .outcome + .outcome,.outcome:nth-child(3),.outcome:nth-child(4) {
-    border-top:1px solid var(--line);
-    border-left:0;
+    padding:28px 24px 30px;
+    border-radius:14px;
   }
 
   .finalStatement {
