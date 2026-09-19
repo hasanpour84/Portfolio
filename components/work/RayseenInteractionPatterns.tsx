@@ -10,8 +10,8 @@ const filteringContexts = [
     title: "Finance",
     description: "Financial reports and transactional data",
     icon: "/images/rayvarz/rayseen/filtering-finance-icon-placeholder.svg",
-    image: "/images/rayvarz/rayseen/filtering-finance-placeholder.svg",
-    alt: "Temporary placeholder for the Finance filtering screenshot.",
+    image: "/images/rayvarz/rayseen/filter_finance.jpg",
+    alt: "Finance product filtering interface.",
     width: 1600,
     height: 1000,
   },
@@ -20,8 +20,8 @@ const filteringContexts = [
     title: "Warehouse",
     description: "Items, inventory, and stock operations",
     icon: "/images/rayvarz/rayseen/filtering-warehouse-icon-placeholder.svg",
-    image: "/images/rayvarz/rayseen/filtering-warehouse-placeholder.svg",
-    alt: "Temporary placeholder for the Warehouse filtering screenshot.",
+    image: "/images/rayvarz/rayseen/filter_warehouse.jpg",
+    alt: "Warehouse product filtering interface.",
     width: 1600,
     height: 1000,
   },
@@ -30,15 +30,15 @@ const filteringContexts = [
     title: "Human Resources",
     description: "Employees and organizational data",
     icon: "/images/rayvarz/rayseen/filtering-human-resources-icon-placeholder.svg",
-    image: "/images/rayvarz/rayseen/filtering-human-resources-placeholder.svg",
-    alt: "Temporary placeholder for the Human Resources filtering screenshot.",
+    image: "/images/rayvarz/rayseen/filter_humanresource.jpg",
+    alt: "Human Resources product filtering interface.",
     width: 1600,
     height: 1000,
   },
 ] as const;
 
 export function RayseenInteractionPatterns() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className={styles.patterns} aria-labelledby="patterns-title">
@@ -59,6 +59,9 @@ export function RayseenInteractionPatterns() {
           <p>
             A shared filtering pattern used across different products, with the
             same underlying structure and behavior adapted to each context.
+            By standardizing dedicated, column-header, and advanced filters
+            across the design system, users know what to do wherever they work,
+            creating a more predictable and improved experience.
           </p>
         </div>
 

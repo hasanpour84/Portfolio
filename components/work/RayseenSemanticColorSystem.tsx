@@ -25,22 +25,22 @@ const atomicTokens = [
 ] as const;
 
 const semanticTokens = [
-  { role: "Background / Primary", source: "White", color: "#ffffff" },
-  { role: "Background / Surface", source: "Gray / 50", color: "#f7f7f5" },
-  { role: "Background / Muted", source: "Gray / 100", color: "#e9e9e5" },
-  { role: "Text / Primary", source: "Gray / 900", color: "#181112" },
-  { role: "Text / Secondary", source: "Gray / 600", color: "#5e605b" },
-  { role: "Text / Inverse", source: "White", color: "#ffffff" },
-  { role: "Border / Default", source: "Gray / 200", color: "#d6d7d2" },
-  { role: "Border / Subtle", source: "Gray / 100", color: "#e9e9e5" },
-  { role: "Action / Primary", source: "Green / 500", color: "#45b653" },
-  { role: "Action / Secondary", source: "Blue / 500", color: "#5278c9" },
-  { role: "Action / Disabled", source: "Gray / 300", color: "#b8b9b4" },
-  { role: "Status / Success", source: "Green / 500", color: "#45b653" },
-  { role: "Status / Info", source: "Blue / 500", color: "#5278c9" },
-  { role: "Status / Neutral", source: "Gray / 500", color: "#72746f" },
-  { role: "Status / Warning", source: "Yellow / 500", color: "#d7ab28" },
-  { role: "Status / Error", source: "Red / 500", color: "#c7242f" },
+  { role: "input-standard-title", source: "Gray 200", color: "#878787" },
+  { role: "button-primary-standard-text", source: "Gray 0", color: "#ffffff" },
+  { role: "text-gray A", source: "Gray 300", color: "#545454" },
+  { role: "shell-header-background", source: "Violet 300", color: "#5a2bbe" },
+  { role: "input-standard-value A", source: "Gray 300", color: "#545454" },
+  { role: "button-primary-standard-icon", source: "Gray 0", color: "#ffffff" },
+  { role: "text-gray B", source: "Gray 100", color: "#bababa" },
+  { role: "shell-header-text A", source: "Gray 0", color: "#ffffff" },
+  { role: "button-danger-hover-icon", source: "Red 400", color: "#bf3830" },
+  { role: "button-primary-standard-border", source: "Green 300", color: "#45b653" },
+  { role: "text-primary", source: "Gray 400", color: "#14ae5c" },
+  { role: "shell-header-text B", source: "Yellow 300", color: "#efac1f" },
+  { role: "input-standard-background", source: "Gray 0", color: "#ffffff" },
+  { role: "button-primary-standard-background", source: "Green 300", color: "#45b653" },
+  { role: "text-secondary", source: "Violet 300", color: "#5a2bbe" },
+  { role: "input-standard-value B", source: "Sky Blue 300", color: "#1498f8" },
 ] as const;
 
 export function RayseenSemanticColorSystem() {
@@ -52,7 +52,8 @@ export function RayseenSemanticColorSystem() {
         <p>
           RAYSEEN separates raw color values from their functional meaning
           through a two-layer token architecture, making theming more
-          consistent and scalable across products.
+          consistent and scalable across products while enabling high-quality
+          Light and Dark theme implementation.
         </p>
       </header>
 

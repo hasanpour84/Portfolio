@@ -10,40 +10,40 @@ const systemLayers = [
     title: "Foundations",
     description:
       "Core rules that define the visual and structural language of the system.",
-    image: "/images/rayvarz/rayseen/architecture-foundations-placeholder.svg",
-    alt: "Temporary placeholder for the RAYSEEN Foundations visual.",
+    image: "/images/rayvarz/rayseen/rayseen_foundation.jpg",
+    alt: "RAYSEEN design-system foundations.",
   },
   {
     number: "02",
     title: "Components",
     description:
       "Reusable interface building blocks created from shared foundations.",
-    image: "/images/rayvarz/rayseen/architecture-components-placeholder.svg",
-    alt: "Temporary placeholder for the RAYSEEN Components visual.",
+    image: "/images/rayvarz/rayseen/rayseen_component.jpg",
+    alt: "RAYSEEN design-system components.",
   },
   {
     number: "03",
     title: "Layouts",
     description:
       "Structured page frameworks that organize complex product information.",
-    image: "/images/rayvarz/rayseen/architecture-layouts-placeholder.svg",
-    alt: "Temporary placeholder for the RAYSEEN Layouts visual.",
+    image: "/images/rayvarz/rayseen/rayseen_layout.jpg",
+    alt: "RAYSEEN design-system layouts.",
   },
   {
     number: "04",
     title: "Patterns",
     description:
       "Reusable interaction solutions for recurring user needs and workflows.",
-    image: "/images/rayvarz/rayseen/architecture-patterns-placeholder.svg",
-    alt: "Temporary placeholder for the RAYSEEN Patterns visual.",
+    image: "/images/rayvarz/rayseen/rayseen_pattern.jpg",
+    alt: "RAYSEEN design-system patterns.",
   },
   {
     number: "05",
     title: "Experiences",
     description:
       "Real product experiences created by combining every layer of the system.",
-    image: "/images/rayvarz/rayseen/architecture-experiences-placeholder.svg",
-    alt: "Temporary placeholder for the RAYSEEN Experiences visual.",
+    image: "/images/rayvarz/rayseen/rayseen_experience.jpg",
+    alt: "RAYSEEN product experiences built from the design system.",
   },
 ] as const;
 
