@@ -5,7 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  vinext@1.0.0-beta.9: 8a679920141dbe38409724e108201b992286a414ba2a834314f5a6f195972880
+  vinext@1.0.0-beta.9:
+    hash: 8a679920141dbe38409724e108201b992286a414ba2a834314f5a6f195972880
+    path: patches/vinext@1.0.0-beta.9.patch
 
 importers:
 
