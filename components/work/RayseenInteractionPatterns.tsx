@@ -59,6 +59,9 @@ export function RayseenInteractionPatterns() {
           <p>
             A shared filtering pattern used across different products, with the
             same underlying structure and behavior adapted to each context.
+            By standardizing dedicated, column-header, and advanced filters
+            across the design system, users know what to do wherever they work,
+            creating a more predictable and improved experience.
           </p>
         </div>
 

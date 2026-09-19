@@ -11,13 +11,13 @@ const layouts = [
   {
     title: "Single Entity",
     description:
-      "For focused views centered around one record or business object.",
+      "For focused views centered around a master-data record or business object.",
     icon: "/images/rayvarz/rayseen/Layout_SingleEntity.png",
     alt: "Single Entity layout example.",
   },
   {
     title: "MasterDetail",
-    description: "For navigating related entities without losing context.",
+    description: "For transactional data, keeping related entities in context.",
     icon: "/images/rayvarz/rayseen/Layout_MasterDetail.png",
     alt: "MasterDetail layout example.",
   },
